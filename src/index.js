@@ -44,6 +44,12 @@ async function startServer() {
             });
         });
 
+        app.get('/poll', async (req, res) => {
+            const polls = await pollsCollection.find({}).toArray();
+            return res.send(polls);
+        });
+
+
         app.listen(port, () => {
             console.log(`Server running on port ${port}`);
         });

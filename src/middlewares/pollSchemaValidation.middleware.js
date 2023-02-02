@@ -19,7 +19,7 @@ export function pollSchemaValidation(req, res, next) {
 
     const question = {
         title,
-        expireAt
+        expireAt: expireAt.slice(0, 16)
     };
   
     const { error } = pollsSchema.validate(question, { abortEarly: true });

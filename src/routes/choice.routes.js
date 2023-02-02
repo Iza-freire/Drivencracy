@@ -1,6 +1,7 @@
 import { Router } from "express";
-import { createAnswer, retrieveAnswers } from "../controllers/choice.controllers.js";
 import { validateChoiceSchema } from "../middlewares/choiceSchemaValidation.middleware.js";
+import { createAnswer, retrieveAnswers } from "../controllers/choice.controllers.js";
+
 
 const router = Router();
 

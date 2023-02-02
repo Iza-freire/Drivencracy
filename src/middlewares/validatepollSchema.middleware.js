@@ -1,6 +1,6 @@
 import { pollsSchema } from "../models/poll.model.js";
 
-export function pollSchemaValidation(req, res, next) {
+export function validatepollSchema(req, res, next) {
 
     let { title, expireAt = '' } = req.body;
 
@@ -8,7 +8,6 @@ export function pollSchemaValidation(req, res, next) {
     if (!title) {
         return res.status(422).send({ error: 'Title is required' });
     }
-
 
     if (!expireAt) {
         const now = new Date();

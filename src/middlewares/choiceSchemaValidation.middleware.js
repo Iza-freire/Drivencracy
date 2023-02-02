@@ -6,9 +6,13 @@ export async function validateChoiceSchema(req, res, next) {
 
     let { title, pollId } = req.body;
 
-    if (!title || !pollId) {
-        res.sendStatus(422);
+    if (!title) {
+        return res.status(422).send({ error: 'Title is required' });
     }
+     if (!pollId) {
+        return res.status(422).send({ error: 'PollId is required' });
+    }
+
     const choice = { title, pollId };
 
     const validationResult = choicesSchema.validate(choice, { abortEarly: true });

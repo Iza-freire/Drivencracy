@@ -15,3 +15,4 @@ try {
 const db = client.db("drivencracy");
 export const pollsCollection = db.collection("poll");
 export const choicesCollection = db.collection("choice");
+export const votesCollection = db.collection("vote");
